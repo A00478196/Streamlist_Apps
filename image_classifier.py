@@ -4,7 +4,7 @@ from PIL import Image
 import numpy as np
 
 # Load the pre-trained model
-model = load_model("D:/MCDA/5580/Streamlit_Apps/mnist_digit_classifier.keras")
+model = load_model("D:/MCDA/5580/Streamlit_Apps/mnist_digit_classifier")
 
 # Function to preprocess the uploaded image
 def preprocess_image(image):
