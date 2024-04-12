@@ -4,6 +4,8 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense, Dropout
 from tensorflow.keras.utils import plot_model
 from matplotlib import pyplot
+from pathlib import Path
+
 
 # Load and preprocess the MNIST dataset
 (x_train, y_train), (x_test, y_test) = mnist.load_data()
@@ -32,5 +34,7 @@ history = model.fit(x_train, y_train, epochs=10, validation_split=0.2)
 # Evaluate the model on test data
 test_loss, test_accuracy = model.evaluate(x_test, y_test)
 print(f"Test Loss: {test_loss}, Test Accuracy: {test_accuracy}")
+
+save_dir = Path(".")
 # Save the trained model
-model.save("D:/MCDA/5580/Streamlit_Apps/mnist_digit_classifier")
+model.save(save_dir / "mnist_digit_classifier")
